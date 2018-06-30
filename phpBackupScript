@@ -6,6 +6,6 @@ mkdir /var/phpbackup
 cd /var/phpbackup/
 php -m | tee php_modules
 cp -R /etc/php* /var/phpbackup/
-rpm -qa | grep php | tee phpbackup/php_packages
+rpm -qa | grep php | tee php_packages
 pecl list | tee pecl_packages
 php -v | tee php_version
