@@ -1,0 +1,11 @@
+#!/bin/bash
+
+#backup all php config and package info
+
+mkdir /var/phpbackup
+cd /var/phpbackup/
+php -m | tee php_modules
+cp -R /etc/php* /var/phpbackup/
+rpm -qa | grep php | tee phpbackup/php_packages
+pecl list | tee pecl_packages
+php -v | tee php_version
